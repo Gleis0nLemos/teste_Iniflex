@@ -28,5 +28,11 @@ public class Principal {
         // 3.3 - Imprimir todos os funcionários
         funcionarios.forEach(System.out::println);
 
+        // 3.4 - Aumentar salário em 10%
+        funcionarios.forEach(f -> f.aumentarSalario(new BigDecimal("0.10")));
+
+        System.out.println("\n");
+        funcionarios.forEach(System.out::println);
+
     }
 }

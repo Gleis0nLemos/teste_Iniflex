@@ -32,6 +32,10 @@ public class Funcionario extends Pessoa {
         this.funcao = funcao;
     }
 
+    public void aumentarSalario(BigDecimal percentual) {
+        this.salario = this.salario.add(this.salario.multiply(percentual));
+    }
+
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
