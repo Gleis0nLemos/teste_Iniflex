@@ -1,3 +1,4 @@
+import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.*;
@@ -35,9 +36,14 @@ public class Principal {
 //        System.out.println("\n");
 //        funcionarios.forEach(System.out::println);
 
-        // 3.5 Agrupa os funcionários por função
+        // 3.5 - Agrupa os funcionários por função
         Map<String, List<Funcionario>> funcionariosPorFuncao = funcionarios.stream()
                 .collect(Collectors.groupingBy(Funcionario::getFuncao));
 
+        // 3.6 - Imprimindo os funcionário agrupados pela função
+        funcionariosPorFuncao.forEach((funcao, lista) -> {
+            System.out.println("\n" + funcao + ":");
+            lista.forEach(System.out::println);
+        });
     }
 }
