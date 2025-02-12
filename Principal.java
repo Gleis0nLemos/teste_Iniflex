@@ -6,6 +6,8 @@ import java.util.*;
 
 public class Principal {
 
+    // 3.1 - Funcionários inseridos de acordo com a tabela inicial
+
     public static void main(String[] args) {
         List<Funcionario> funcionarios = new ArrayList<>(Arrays.asList(
                 new Funcionario("Maria", LocalDate.of(2000, 10, 18), new BigDecimal("2009.44"), "Operador"),
@@ -19,5 +21,8 @@ public class Principal {
                 new Funcionario("Heloísa", LocalDate.of(2003, 5, 24), new BigDecimal("1606.85"), "Eletricista"),
                 new Funcionario("Helena", LocalDate.of(1996, 9, 2), new BigDecimal("2799.93"), "Gerente")
         ));
+
+    // 3.2 - Remover João da tabela
+    funcionarios.removeIf(f -> f.nome.equals("João"));
     }
 }
