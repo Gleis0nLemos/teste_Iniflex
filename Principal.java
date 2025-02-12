@@ -7,11 +7,19 @@ import java.util.stream.Collectors;
 
 // 3 - Classe Principal
 
+/**
+ * Classe Principal que gerencia uma lista de funcionários e realiza diversas operações
+ * como remoção, agrupamento, ordenação e cálculos salariais.
+ */
 public class Principal {
 
-    // 3.1 - Funcionários inseridos de acordo com a tabela inicial
-
+    /**
+     * Método principal que executa todas as operações sobre os funcionários.
+     *
+     * @param args Argumentos da linha de comando (não utilizados).
+     */
     public static void main(String[] args) {
+        // 3.1 - Funcionários inseridos de acordo com a tabela inicial
         List<Funcionario> funcionarios = new ArrayList<>(Arrays.asList(
                 new Funcionario("Maria", LocalDate.of(2000, 10, 18), new BigDecimal("2009.44"), "Operador"),
                 new Funcionario("João", LocalDate.of(1990, 5, 12), new BigDecimal("2284.38"), "Operador"),
