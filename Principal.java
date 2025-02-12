@@ -22,7 +22,11 @@ public class Principal {
                 new Funcionario("Helena", LocalDate.of(1996, 9, 2), new BigDecimal("2799.93"), "Gerente")
         ));
 
-    // 3.2 - Remover João da tabela
-    funcionarios.removeIf(f -> f.nome.equals("João"));
+        // 3.2 - Remover João da tabela
+        funcionarios.removeIf(f -> f.nome.equals("João"));
+
+        // 3.3 - Imprimir todos os funcionários
+        funcionarios.forEach(System.out::println);
+
     }
 }

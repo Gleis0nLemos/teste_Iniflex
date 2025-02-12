@@ -1,5 +1,8 @@
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 // 2 - Classe Funcionário
 
@@ -27,5 +30,15 @@ public class Funcionario extends Pessoa {
         super(nome, dataNascimento);
         this.salario = salario;
         this.funcao = funcao;
+    }
+
+    @Override
+    public String toString() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        NumberFormat nf = NumberFormat.getNumberInstance(new Locale("pt", "BR"));
+        nf.setMinimumFractionDigits(2);
+        nf.setMaximumFractionDigits(2);
+
+        return nome + " - " + dataNascimento.format(formatter) + " - " + nf.format(salario) + " - " + funcao;
     }
 }
