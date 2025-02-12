@@ -44,6 +44,10 @@ public class Funcionario extends Pessoa {
         return LocalDate.now().getYear() - dataNascimento.getYear();
     }
 
+    public BigDecimal getSalario() {
+        return salario;
+    }
+
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");

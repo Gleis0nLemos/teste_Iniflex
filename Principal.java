@@ -1,5 +1,6 @@
 import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -29,7 +30,7 @@ public class Principal {
 
         // 3.3 - Imprimir todos os funcionários
         System.out.println("\n###############################################");
-        System.out.println("\nTodos os funcionários antes do aumento de 10% e após remover João:\n");
+        System.out.println("Todos os funcionários antes do aumento de 10% e após remover João:\n");
         funcionarios.forEach(System.out::println);
 
         // 3.4 - Aumentando salário em 10%
@@ -62,10 +63,22 @@ public class Principal {
         Funcionario maisVelho = Collections.min(funcionarios, Comparator.comparing(f -> f.dataNascimento));
         System.out.println("Funcionário mais velho: " + maisVelho.nome + " - " + maisVelho.getIdade() + " anos");
 
-        // 3.10 - Ordenando funcionários por nome
+        // 3.10 - Ordenando funcionários por ordem alfabética
         System.out.println("\n###############################################");
         funcionarios.sort(Comparator.comparing(f -> f.nome));
         System.out.println("Funcionários ordenados por nome:");
         funcionarios.forEach(System.out::println);
+
+        // 3.11 - Imprimindo o total dos salários dos funcionários
+        System.out.println("\n###############################################");
+        BigDecimal totalSalarios = funcionarios.stream()
+                .map(Funcionario::getSalario)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+
+        NumberFormat nf = NumberFormat.getNumberInstance(new Locale("pt", "BR"));
+        nf.setMinimumFractionDigits(2);
+        nf.setMaximumFractionDigits(2);
+
+        System.out.println("Total dos salários: " + nf.format(totalSalarios));
     }
 }
