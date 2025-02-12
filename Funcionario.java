@@ -36,6 +36,10 @@ public class Funcionario extends Pessoa {
         this.salario = this.salario.add(this.salario.multiply(percentual));
     }
 
+    public String getFuncao() {
+        return funcao;
+    }
+
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
