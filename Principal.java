@@ -28,6 +28,8 @@ public class Principal {
         funcionarios.removeIf(f -> f.nome.equals("João"));
 
         // 3.3 - Imprimir todos os funcionários
+        System.out.println("\n###############################################");
+        System.out.println("\nTodos os funcionários antes do aumento de 10% e após remover João:\n");
         funcionarios.forEach(System.out::println);
 
         // 3.4 - Aumentando salário em 10%
@@ -41,9 +43,18 @@ public class Principal {
                 .collect(Collectors.groupingBy(Funcionario::getFuncao));
 
         // 3.6 - Imprimindo os funcionário agrupados pela função
+        System.out.println("\n###############################################");
+        System.out.println("\nFuncionários agrupados por função:");
         funcionariosPorFuncao.forEach((funcao, lista) -> {
             System.out.println("\n" + funcao + ":");
             lista.forEach(System.out::println);
         });
+
+        // 3.8 - Funcionários com aniversário em Outubro e Dezembro
+        System.out.println("\n###############################################");
+        System.out.println("\nAniversariantes de Outubro e Dezembro:\n");
+        funcionarios.stream()
+                .filter(f -> f.dataNascimento.getMonthValue() == 10 || f.dataNascimento.getMonthValue() == 12)
+                .forEach(System.out::println);
     }
 }
