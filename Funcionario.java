@@ -40,6 +40,10 @@ public class Funcionario extends Pessoa {
         return funcao;
     }
 
+    public int getIdade() {
+        return LocalDate.now().getYear() - dataNascimento.getYear();
+    }
+
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");

@@ -44,7 +44,7 @@ public class Principal {
 
         // 3.6 - Imprimindo os funcionário agrupados pela função
         System.out.println("\n###############################################");
-        System.out.println("\nFuncionários agrupados por função:");
+        System.out.println("Funcionários agrupados por função:");
         funcionariosPorFuncao.forEach((funcao, lista) -> {
             System.out.println("\n" + funcao + ":");
             lista.forEach(System.out::println);
@@ -52,9 +52,14 @@ public class Principal {
 
         // 3.8 - Funcionários com aniversário em Outubro e Dezembro
         System.out.println("\n###############################################");
-        System.out.println("\nAniversariantes de Outubro e Dezembro:\n");
+        System.out.println("Aniversariantes de Outubro e Dezembro:\n");
         funcionarios.stream()
                 .filter(f -> f.dataNascimento.getMonthValue() == 10 || f.dataNascimento.getMonthValue() == 12)
                 .forEach(System.out::println);
+
+        // 3.9 - Funcionário mais velho
+        System.out.println("\n###############################################");
+        Funcionario maisVelho = Collections.min(funcionarios, Comparator.comparing(f -> f.dataNascimento));
+        System.out.println("Funcionário mais velho: " + maisVelho.nome + " - " + maisVelho.getIdade() + " anos");
     }
 }
