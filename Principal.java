@@ -61,5 +61,11 @@ public class Principal {
         System.out.println("\n###############################################");
         Funcionario maisVelho = Collections.min(funcionarios, Comparator.comparing(f -> f.dataNascimento));
         System.out.println("Funcionário mais velho: " + maisVelho.nome + " - " + maisVelho.getIdade() + " anos");
+
+        // 3.10 - Ordenando funcionários por nome
+        System.out.println("\n###############################################");
+        funcionarios.sort(Comparator.comparing(f -> f.nome));
+        System.out.println("Funcionários ordenados por nome:");
+        funcionarios.forEach(System.out::println);
     }
 }
