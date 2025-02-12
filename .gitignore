@@ -1,0 +1,25 @@
+# Diretórios do IntelliJ IDEA
+/.idea/
+/out/
+/target/
+/*.iml
+
+# Configurações do workspace
+/shelf/
+/workspace.xml
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Dependências
+*.jar
+*.war
+*.ear
+/node_modules/
+/dist/
+/build/
+
+# Arquivos do editor de código
+.vscode/
+*.log
